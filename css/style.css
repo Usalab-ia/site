@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 48px 0 48px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+.main-nav a {
+    margin-left: 32px;
+    text-decoration: none;
+    color: #111;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+.main-nav a:hover {
+    color: #0077cc;
+}
+
+.center-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main-title {
+    font-size: 6vw;
+    font-weight: bold;
+    margin: 0 0 16px 0;
+    letter-spacing: -2px;
+}
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+}
+.app-store-link {
+    display: inline-block;
+    margin-bottom: 32px;
+}
+.app-store-badge {
+    width: 320px;
+    max-width: 90vw;
+    height: auto;
+    border-radius: 16px;
+    border: 2px solid #222;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+.app-store-link:hover .app-store-badge {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.social-icons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+.icon {
+    width: 36px;
+    height: 36px;
+    fill: #111;
+    transition: filter 0.2s;
+}
+.social-icons a:hover .icon {
+    filter: brightness(0.5);
+}
+.main-footer {
+    width: 100%;
+    background: #fafafa;
+    padding: 24px 0 16px 0;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+.main-footer a {
+    color: #111;
+    text-decoration: none;
+    margin: 0 16px;
+    transition: color 0.2s;
+}
+.main-footer a:hover {
+    color: #0077cc;
+}
+.content-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.content-page h1 {
+    margin-bottom: 20px;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+@media (max-width: 600px) {
+    .main-header, .main-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .app-store-badge {
+        width: 90vw;
+    }
+} 

@@ -60,9 +60,7 @@ body {
 .app-store-badge,
 .google-play-badge {
     height: 60px;
-    width: 200px;
-    min-width: 200px;
-    max-width: 200px;
+    width: auto;
     border-radius: 16px;
     border: 2px solid #222;
     box-sizing: border-box;

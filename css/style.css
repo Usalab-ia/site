@@ -57,17 +57,19 @@ body {
     display: inline-block;
     margin-bottom: 32px;
 }
-.app-store-badge {
-    width: 320px;
-    max-width: 90vw;
-    height: auto;
+.app-store-badge,
+.google-play-badge {
+    height: 60px;
+    width: auto;
     border-radius: 16px;
     border: 2px solid #222;
     box-sizing: border-box;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s;
+    background: #fff;
 }
-.app-store-link:hover .app-store-badge {
+.app-store-link:hover .app-store-badge,
+.google-play-link:hover .google-play-badge {
     box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 .social-icons {

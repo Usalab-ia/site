@@ -60,13 +60,16 @@ body {
 .app-store-badge,
 .google-play-badge {
     height: 60px;
-    width: auto;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
     border-radius: 16px;
     border: 2px solid #222;
     box-sizing: border-box;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s;
     background: #fff;
+    object-fit: contain;
 }
 .app-store-link:hover .app-store-badge,
 .google-play-link:hover .google-play-badge {

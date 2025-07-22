@@ -42,6 +42,20 @@ body {
     justify-content: center;
     text-align: center;
 }
+
+.app-logo-container {
+    margin-bottom: 24px;
+}
+
+.app-logo {
+    width: 120px;
+    height: auto;
+    max-width: 120px;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
 .main-title {
     font-size: 6vw;
     font-weight: bold;
@@ -137,6 +151,10 @@ body {
     }
     .main-title {
         font-size: 2.5rem;
+    }
+    .app-logo {
+        width: 80px;
+        max-width: 80px;
     }
     .app-store-badge {
         width: 90vw;

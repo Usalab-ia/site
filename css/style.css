@@ -67,6 +67,15 @@ body {
     margin-bottom: 32px;
     letter-spacing: 2px;
 }
+
+.app-badges-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
 .app-store-link {
     display: inline-block;
     margin-bottom: 32px;
@@ -145,18 +154,103 @@ body {
     color: inherit;
 }
 @media (max-width: 600px) {
-    .main-header, .main-footer {
-        padding-left: 16px;
-        padding-right: 16px;
+    .main-header {
+        flex-direction: column;
+        padding: 16px 16px 0 16px;
+        gap: 16px;
     }
+    
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+    
+    .main-nav a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+    
     .main-title {
         font-size: 2.5rem;
     }
+    
     .app-logo {
         width: 80px;
         max-width: 80px;
     }
-    .app-store-badge {
-        width: 90vw;
+    
+    .app-badges-container {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+    
+    .app-store-link,
+    .google-play-link {
+        margin-bottom: 0;
+    }
+    
+    .app-store-badge,
+    .google-play-badge {
+        height: 50px;
+        width: auto;
+        max-width: 140px;
+    }
+    
+    .social-icons {
+        gap: 16px;
+    }
+    
+    .icon {
+        height: 32px;
+        width: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        max-width: 32px;
+        max-height: 32px;
+    }
+    
+    .main-footer {
+        padding: 20px 16px 16px 16px;
+    }
+    
+    .main-footer a {
+        display: block;
+        margin: 8px 0;
+        font-size: 0.95rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+    
+    .center-content {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .app-badges-container {
+        gap: 8px;
+    }
+    
+    .app-store-badge,
+    .google-play-badge {
+        height: 45px;
+        max-width: 120px;
+    }
+    
+    .main-nav a {
+        font-size: 0.9rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
     }
 } 

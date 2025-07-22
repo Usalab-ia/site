@@ -85,7 +85,6 @@ body {
     height: 60px;
     width: auto;
     border-radius: 16px;
-    border: 2px solid #222;
     box-sizing: border-box;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s;

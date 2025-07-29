@@ -1,0 +1,19 @@
+{
+  "name": "labia-website",
+  "version": "1.0.0",
+  "description": "Lab.IA website with health monitoring",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Usalab-ia/site.git"
+  },
+  "keywords": ["website", "health-check", "monitoring"],
+  "author": "GGGAM Enterprises LLC",
+  "license": "MIT"
+} 

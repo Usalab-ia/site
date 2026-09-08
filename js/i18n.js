@@ -305,7 +305,16 @@
     return "";
   }
 
+  function screenshotSrc(lang, n) {
+    return lang === "es"
+      ? "images/screenshots/" + n + ".jpg"
+      : "images/screenshots/" + lang + "/" + n + ".jpg";
+  }
+
   function detect() {
+    var booted = normalize(document.documentElement.getAttribute("data-lang"));
+    if (SUPPORTED[booted]) return booted;
+
     try {
       var params = new URLSearchParams(window.location.search);
       var fromQuery = normalize(params.get("lang"));
@@ -348,20 +357,13 @@
   function setScreenshots(lang) {
     document.querySelectorAll("[data-screenshot]").forEach(function (img) {
       var n = img.getAttribute("data-screenshot");
+      var localized = screenshotSrc(lang, n);
       var fallback = "images/screenshots/" + n + ".jpg";
-      var localized = "images/screenshots/" + lang + "/" + n + ".jpg";
-      if (lang === "es") {
-        img.src = fallback;
-        return;
-      }
-      var probe = new Image();
-      probe.onload = function () {
-        img.src = localized;
+      img.onerror = function () {
+        img.onerror = null;
+        if (img.getAttribute("src") !== fallback) img.src = fallback;
       };
-      probe.onerror = function () {
-        img.src = fallback;
-      };
-      probe.src = localized;
+      if (img.getAttribute("src") !== localized) img.src = localized;
     });
   }
 

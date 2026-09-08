@@ -10,6 +10,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+      (function () {
+        var SUPPORTED = { es: 1, en: 1, pt: 1 };
+        function normalize(code) {
+          var value = (code || "").toLowerCase();
+          if (value.indexOf("pt") === 0) return "pt";
+          if (value.indexOf("es") === 0) return "es";
+          if (value.indexOf("en") === 0) return "en";
+          return "";
+        }
+        var lang = "";
+        try {
+          lang = normalize(new URLSearchParams(location.search).get("lang"));
+        } catch (e) {}
+        if (!SUPPORTED[lang]) {
+          try { lang = normalize(localStorage.getItem("labia-lang")); } catch (e2) {}
+        }
+        if (!SUPPORTED[lang]) {
+          var list = navigator.languages && navigator.languages.length
+            ? navigator.languages
+            : [navigator.language || ""];
+          for (var i = 0; i < list.length && !SUPPORTED[lang]; i++) {
+            lang = normalize(list[i]);
+          }
+        }
+        if (!SUPPORTED[lang]) lang = "es";
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+        document.documentElement.setAttribute("data-lang", lang);
+      })();
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -55,21 +85,30 @@
                 <div class="phone" role="region" aria-roledescription="carrusel" aria-label="Capturas de Lab.IA" data-i18n-attr="aria-roledescription:phone.role,aria-label:phone.label">
                     <div class="phone-track">
                         <div class="phone-slide">
-                            <img src="images/screenshots/1.jpg" data-screenshot="1" alt="Pantalla de inicio de Lab.IA" data-i18n-attr="alt:shot.1">
+                            <img data-screenshot="1" alt="Pantalla de inicio de Lab.IA" data-i18n-attr="alt:shot.1">
                         </div>
                         <div class="phone-slide">
-                            <img src="images/screenshots/2.jpg" data-screenshot="2" alt="Generador de frases de Lab.IA" data-i18n-attr="alt:shot.2">
+                            <img data-screenshot="2" alt="Generador de frases de Lab.IA" data-i18n-attr="alt:shot.2">
                         </div>
                         <div class="phone-slide">
-                            <img src="images/screenshots/3.jpg" data-screenshot="3" alt="Selección de país en Lab.IA" data-i18n-attr="alt:shot.3">
+                            <img data-screenshot="3" alt="Selección de país en Lab.IA" data-i18n-attr="alt:shot.3">
                         </div>
                         <div class="phone-slide">
-                            <img src="images/screenshots/4.jpg" data-screenshot="4" alt="Sube un pantallazo en Lab.IA" data-i18n-attr="alt:shot.4">
+                            <img data-screenshot="4" alt="Sube un pantallazo en Lab.IA" data-i18n-attr="alt:shot.4">
                         </div>
                         <div class="phone-slide">
-                            <img src="images/screenshots/5.jpg" data-screenshot="5" alt="Respuesta sugerida en Lab.IA" data-i18n-attr="alt:shot.5">
+                            <img data-screenshot="5" alt="Respuesta sugerida en Lab.IA" data-i18n-attr="alt:shot.5">
                         </div>
                     </div>
+                    <script>
+                      (function () {
+                        var lang = document.documentElement.getAttribute("data-lang") || "es";
+                        var prefix = lang === "es" ? "images/screenshots/" : "images/screenshots/" + lang + "/";
+                        document.querySelectorAll("[data-screenshot]").forEach(function (img) {
+                          img.src = prefix + img.getAttribute("data-screenshot") + ".jpg";
+                        });
+                      })();
+                    </script>
                 </div>
             </div>
         </section>
